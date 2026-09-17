@@ -1,0 +1,286 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #ffe600, #ff6ec7, #00e5ff);
+  background-attachment: fixed;
+  color: #1a1a1a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Шапка */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #ffe600;
+  text-shadow: 2px 2px 0 #ff2d95;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 22px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 30px;
+  transition: 0.25s;
+}
+
+.nav a:hover { background: #ff2d95; transform: scale(1.05); }
+.nav a.active { background: #ffe600; color: #000; }
+
+/* Главная */
+main { flex: 1; padding: 40px 40px 60px; max-width: 1200px; margin: 0 auto; width: 100%; }
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 30px;
+  box-shadow: 0 15px 0 #000;
+  border: 4px solid #000;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  background: #ffe600;
+  padding: 0 10px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 #ff2d95;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  background: #ff2d95;
+  color: #fff;
+  padding: 16px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 1.1rem;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0 #000;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0 #000;
+  background: #ffe600;
+  color: #000;
+}
+
+/* Карточки */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 24px;
+  border: 4px solid #000;
+  box-shadow: 8px 8px 0 #000;
+  transition: 0.25s;
+}
+
+.card:hover { transform: translateY(-8px) rotate(-1deg); }
+
+.card-emoji { font-size: 3rem; margin-bottom: 12px; }
+.card h3 { font-size: 1.4rem; margin-bottom: 10px; }
+.card p { line-height: 1.6; }
+
+/* Заголовки страниц */
+.page-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 12px;
+  text-shadow: 3px 3px 0 #fff;
+}
+
+.page-sub {
+  text-align: center;
+  font-size: 1.15rem;
+  margin-bottom: 40px;
+}
+
+/* Мемы */
+.memes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.meme-card {
+  background: #fff;
+  border: 4px solid #000;
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 8px 8px 0 #000;
+  transition: 0.25s;
+}
+
+.meme-card:hover { transform: scale(1.03) rotate(1deg); }
+
+.meme-img {
+  font-size: 4rem;
+  text-align: center;
+  background: #ffe600;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 3px solid #000;
+}
+
+.tag {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+  border: 2px solid #000;
+}
+
+.tag.old { background: #00e5ff; }
+.tag.fresh { background: #ff2d95; color: #fff; }
+
+.meme-card h2 { font-size: 1.3rem; margin-bottom: 10px; }
+.meme-card p { line-height: 1.6; }
+
+/* Соцсети */
+.social-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.social-item {
+  padding: 30px 25px;
+  border-radius: 24px;
+  border: 4px solid #000;
+  box-shadow: 8px 8px 0 #000;
+  transition: 0.25s;
+}
+
+.social-item:hover { transform: translateY(-8px); }
+.social-item h2 { margin-bottom: 12px; font-size: 1.5rem; }
+.social-item p { line-height: 1.6; }
+
+.youtube { background: #ff4d4d; color: #fff; }
+.vk { background: #4d79ff; color: #fff; }
+.tiktok { background: #1a1a1a; color: #fff; }
+.telegram { background: #29b6f6; color: #fff; }
+.twitter { background: #e0e0e0; }
+.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
+
+/* Макс */
+.max-hero {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: #fff;
+  border: 4px solid #000;
+  border-radius: 30px;
+  padding: 30px;
+  box-shadow: 10px 10px 0 #000;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.max-photo {
+  font-size: 5rem;
+  background: #ffe600;
+  border: 4px solid #000;
+  border-radius: 24px;
+  padding: 20px 30px;
+}
+
+.max-hero h1 { font-size: 2.2rem; margin-bottom: 8px; }
+.max-hero .page-sub { text-align: left; margin: 0; }
+
+.bio {
+  background: #fff;
+  border: 4px solid #000;
+  border-radius: 30px;
+  padding: 35px;
+  box-shadow: 10px 10px 0 #000;
+}
+
+.bio h2 { font-size: 1.8rem; margin: 25px 0 15px; }
+.bio h2:first-child { margin-top: 0; }
+.bio p { line-height: 1.7; margin-bottom: 12px; }
+
+.bio-list { list-style: none; }
+.bio-list li {
+  padding: 10px 0 10px 35px;
+  position: relative;
+  line-height: 1.6;
+}
+.bio-list li::before {
+  content: "🔥";
+  position: absolute;
+  left: 0;
+}
+
+.quote {
+  margin-top: 30px;
+  padding: 25px;
+  background: #ffe600;
+  border: 3px dashed #000;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+/* Подвал */
+.footer {
+  background: #000;
+  color: #ffe600;
+  text-align: center;
+  padding: 25px;
+  font-weight: 700;
+}
+
+/* Адаптив */
+@media (max-width: 700px) {
+  .header { flex-direction: column; padding: 15px; }
+  .nav a { margin: 5px; display: inline-block; }
+  .hero h1 { font-size: 2rem; }
+  main { padding: 25px 18px 50px; }
+  .max-hero { flex-direction: column; text-align: center; }
+  .max-hero .page-sub { text-align: center; }
+}
